@@ -1,9 +1,11 @@
 // Import packages
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 // App
 const app = express();
 // Morgan
+app.use(cors())
 app.use(morgan('tiny'));
 // First route
 app.use(express.json());

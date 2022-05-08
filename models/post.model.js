@@ -56,9 +56,10 @@ function deletePost(id) {
     helper
       .mustBeInArray(posts, id)
       .then(() => {
-        posts = posts.filter((p) => p.id !== id);
+        posts = posts.filter((p) => p.id != id);
+        console.log(posts)
         helper.writeJSONFile(filename, posts);
-        resolve();
+        resolve();  
       })
       .catch((err) => reject(err));
   });
